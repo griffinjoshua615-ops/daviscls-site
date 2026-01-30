@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Davis Commercial Laundry Solutions | Premium Laundromat Services</title>
+  <!-- Swiper CSS for the hero slider -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css">
+  <!-- AOS library for scroll animations -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <!-- Font Awesome for icons -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <!-- Tailwind CSS via CDN for rapid styling -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      font-family: 'Open Sans', sans-serif;
+      color: #1a202c;
+    }
+    .hero-section {
+      position: relative;
+      width: 100%;
+      height: 80vh;
+    }
+    .hero-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.4);
+    }
+    .hero-content {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: white;
+      text-align: center;
+    }
+
+    /* Ensure only the active slide's text is visible to prevent overlapping */
+    .swiper-slide .hero-content {
+      opacity: 0;
+      transition: opacity 0.6s ease-in-out;
+    }
+    .swiper-slide-active .hero-content {
+      opacity: 1;
+    }
+    /* Dropdown mega menu styles inspired by Laundrylux */
+    .nav-item {
+      /* Relative positioning for each nav item to anchor the dropdown below it */
+      position: relative;
+    }
+    .dropdown-menu {
+      display: none;
+      position: absolute;
+      top: 100%;
+      /* Stretch the mega menu across the entire nav width */
+      left: 50%;
+      transform: translateX(-50%);
+      width: 1000px;
+      background-color: #223A52; /* deep blue similar to Laundrylux */
+      color: #fff;
+      padding-top: 2rem;
+      padding-bottom: 2rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      z-index: 10000;
+    }
+    /* Show the dropdown on hover */
+    .nav-item:hover .dropdown-menu {
+      display: block;
+    }
+    .dropdown-container {
+      /* Full width inside the dropdown */
+      width: 100%;
+      margin: 0 auto;
+      display: grid;
+      /* Use three equal columns for a mega‑menu layout */
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      padding-left: 2rem;
+      padding-right: 2rem;
+    }
+    .dropdown-menu h4 {
+      font-weight: 700;
+      margin-bottom: 0.75rem;
+      font-size: 1.125rem;
+      color: #E2E8F0; /* light blue-grey */
+    }
+    .dropdown-menu ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .dropdown-menu ul li {
+      margin-bottom: 0.5rem;
+    }
+    .dropdown-menu ul li a {
+      color: #A0C4DB;
+      font-weight: 400;
+      font-size: 0.95rem;
+      transition: color 0.2s;
+    }
+    .dropdown-menu ul li a:hover {
+      color: #fff;
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body class="bg-gray-50">
+  <!-- Navigation bar -->
+  <nav class="bg-white shadow fixed w-full z-10 relative">
+    <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
+      <div class="flex items-center space-x-2">
+        <!-- Placeholder for your logo; replace logo_placeholder.png with your actual logo file -->
+        <img src="https://via.placeholder.com/40x40?text=D" alt="Davis CLS logo" class="h-10 w-10 object-contain rounded-full">
+        <span class="font-bold text-xl text-gray-800">Davis CLS</span>
+      </div>
+      <div>
+        <ul class="hidden md:flex space-x-6 text-gray-700">
+          <!-- Services Nav Item with mega menu -->
+          <li class="nav-item group">
+            <a href="#services" class="hover:text-blue-600">Services</a>
+            <!-- Services dropdown -->
+            <div class="dropdown-menu">
+              <div class="dropdown-container">
+                <div class="menu-column">
+                  <h4>Who We Serve</h4>
+                  <ul>
+                    <li><a href="#services">Laundromat Owners</a></li>
+                    <li><a href="#services">Business Investors</a></li>
+                    <li><a href="#services">On‑Premises Laundry</a></li>
+                    <li><a href="#services">Multi‑Housing</a></li>
+                    <li><a href="#services">Route Operators</a></li>
+                  </ul>
+                </div>
+                <div class="menu-column">
+                  <h4>Service Offerings</h4>
+                  <ul>
+                    <li><a href="#services">Equipment Sales &amp; Installation</a></li>
+                    <li><a href="#services">Financing &amp; Leasing</a></li>
+                    <li><a href="#services">Design &amp; Build</a></li>
+                    <li><a href="#services">Maintenance &amp; Repair</a></li>
+                    <li><a href="#services">Marketing &amp; Creative</a></li>
+                  </ul>
+                </div>
+                <div class="menu-column">
+                  <h4>Support &amp; Assistance</h4>
+                  <ul>
+                    <li><a href="#services">Parts &amp; Supplies</a></li>
+                    <li><a href="#services">Laundry Management</a></li>
+                    <li><a href="#services">Real Estate &amp; Turnkey</a></li>
+                    <li><a href="#services">Customer Service</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </li>
+          <!-- Resources Nav Item with mega menu -->
+          <li class="nav-item group">
+            <a href="#resources" class="hover:text-blue-600">Resources</a>
+            <div class="dropdown-menu">
+              <div class="dropdown-container">
+                <div class="menu-column">
+                  <h4>Business Resources</h4>
+                  <ul>
+                    <li><a href="#resources">Blog</a></li>
+                    <li><a href="#resources">E‑books &amp; Guides</a></li>
+                    <li><a href="#resources">Video Tutorials</a></li>
+                    <li><a href="#resources">Case Studies</a></li>
+                    <li><a href="#resources">Spec Sheets</a></li>
+                  </ul>
+                </div>
+                <div class="menu-column">
+                  <h4>Learning Center</h4>
+                  <ul>
+                    <li><a href="#resources">Investment Tips</a></li>
+                    <li><a href="#resources">Equipment Comparisons</a></li>
+                    <li><a href="#resources">Marketing Advice</a></li>
+                    <li><a href="#resources">FAQ &amp; Tutorials</a></li>
+                  </ul>
+                </div>
+                <div class="menu-column">
+                  <h4>Tools &amp; Downloads</h4>
+                  <ul>
+                    <li><a href="#resources">Spec Sheets</a></li>
+                    <li><a href="#resources">Maintenance Manuals</a></li>
+                    <li><a href="#resources">Financing Forms</a></li>
+                    <li><a href="#resources">Store Layouts</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </li>
+          <!-- About Nav Item with mega menu -->
+          <li class="nav-item group">
+            <a href="#about" class="hover:text-blue-600">About</a>
+            <div class="dropdown-menu">
+              <div class="dropdown-container">
+                <div class="menu-column">
+                  <h4>Company</h4>
+                  <ul>
+                    <li><a href="#about">Our Story</a></li>
+                    <li><a href="#about">Leadership</a></li>
+                    <li><a href="#about">Careers</a></li>
+                  </ul>
+                </div>
+                <div class="menu-column">
+                  <h4>Community</h4>
+                  <ul>
+                    <li><a href="#about">Testimonials</a></li>
+                    <li><a href="#about">In the News</a></li>
+                    <li><a href="#about">Events</a></li>
+                  </ul>
+                </div>
+                <div class="menu-column">
+                  <h4>More</h4>
+                  <ul>
+                    <li><a href="#about">Contact Us</a></li>
+                    <li><a href="#about">Partners</a></li>
+                    <li><a href="#about">FAQs</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </li>
+          <!-- Contact Nav Item without mega menu -->
+          <li class="nav-item">
+            <a href="#contact" class="hover:text-blue-600">Contact</a>
+          </li>
+        </ul>
+        <!-- Hamburger for mobile -->
+        <button id="mobile-menu-button" class="md:hidden text-gray-700 focus:outline-none">
+          <i class="fas fa-bars fa-lg"></i>
+        </button>
+      </div>
+    </div>
+    <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-200">
+      <ul class="flex flex-col p-4 space-y-2">
+        <li><a href="#services" class="block py-2 px-4 hover:bg-gray-100">Services</a></li>
+        <li><a href="#resources" class="block py-2 px-4 hover:bg-gray-100">Resources</a></li>
+        <li><a href="#about" class="block py-2 px-4 hover:bg-gray-100">About</a></li>
+        <li><a href="#contact" class="block py-2 px-4 hover:bg-gray-100">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero slider section -->
+  <section class="hero-section">
+    <div class="swiper heroSwiper h-full">
+      <div class="swiper-wrapper">
+        <!-- Slide 1 -->
+        <div class="swiper-slide relative h-full">
+          <!-- Use local hero images instead of remote unsplash to avoid loading issues -->
+          <img src="assets/hero.jpg" class="w-full h-full object-cover" alt="Modern laundromat interior">
+          <div class="hero-overlay"></div>
+          <div class="hero-content px-4">
+            <h1 class="text-4xl md:text-6xl font-bold mb-4">Your Turn‑Key Laundromat Partner</h1>
+            <p class="text-lg md:text-2xl mb-6">Expert equipment, financing &amp; design solutions for laundry businesses.</p>
+            <a href="#contact" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-full font-semibold">Get a Free Consultation</a>
+          </div>
+        </div>
+        <!-- Slide 2 -->
+        <div class="swiper-slide relative h-full">
+          <img src="assets/hero2.jpg" class="w-full h-full object-cover" alt="Laundry equipment">
+          <div class="hero-overlay"></div>
+          <div class="hero-content px-4">
+            <h1 class="text-4xl md:text-6xl font-bold mb-4">Reliable Equipment &amp; Service</h1>
+            <p class="text-lg md:text-2xl mb-6">Supplying top brands and expert maintenance for lasting performance.</p>
+            <a href="#services" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-full font-semibold">Explore Services</a>
+          </div>
+        </div>
+        <!-- Slide 3 -->
+        <div class="swiper-slide relative h-full">
+          <img src="assets/hero3.jpg" class="w-full h-full object-cover" alt="Happy customers in laundromat">
+          <div class="hero-overlay"></div>
+          <div class="hero-content px-4">
+            <h1 class="text-4xl md:text-6xl font-bold mb-4">Invest with Confidence</h1>
+            <p class="text-lg md:text-2xl mb-6">Turn your laundry business idea into a thriving enterprise.</p>
+            <a href="#about" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-full font-semibold">Learn More</a>
+          </div>
+        </div>
+      </div>
+      <!-- Swiper pagination & navigation -->
+      <div class="swiper-pagination"></div>
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+    </div>
+  </section>
+
+  <!-- Services section -->
+  <section id="services" class="py-16 bg-gray-100">
+    <div class="max-w-7xl mx-auto px-4">
+      <h2 class="text-3xl md:text-4xl font-bold text-center mb-10">Our Services</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <!-- Service: Equipment Sales -->
+        <div class="bg-white shadow-md rounded-lg p-8" data-aos="fade-up">
+          <div class="text-blue-600 text-3xl mb-4"><i class="fas fa-cogs"></i></div>
+          <h3 class="text-xl font-semibold mb-2">Equipment Sales &amp; Installation</h3>
+          <p class="text-gray-600">We supply state‑of‑the‑art washers and dryers from leading brands and handle full installation with plumbing and electrical.</p>
+        </div>
+        <!-- Service: Financing -->
+        <div class="bg-white shadow-md rounded-lg p-8" data-aos="fade-up" data-aos-delay="100">
+          <div class="text-blue-600 text-3xl mb-4"><i class="fas fa-file-invoice-dollar"></i></div>
+          <h3 class="text-xl font-semibold mb-2">Financing &amp; Leasing</h3>
+          <p class="text-gray-600">Flexible financing options tailored to your budget, including leasing programs and long‑term payment plans.</p>
+        </div>
+        <!-- Service: Design & Build -->
+        <div class="bg-white shadow-md rounded-lg p-8" data-aos="fade-up" data-aos-delay="200">
+          <div class="text-blue-600 text-3xl mb-4"><i class="fas fa-drafting-compass"></i></div>
+          <h3 class="text-xl font-semibold mb-2">Design &amp; Build</h3>
+          <p class="text-gray-600">From site selection to architectural layout, our experts help you build attractive and efficient laundry spaces.</p>
+        </div>
+        <!-- Service: Maintenance -->
+        <div class="bg-white shadow-md rounded-lg p-8" data-aos="fade-up">
+          <div class="text-blue-600 text-3xl mb-4"><i class="fas fa-wrench"></i></div>
+          <h3 class="text-xl font-semibold mb-2">Maintenance &amp; Repair</h3>
+          <p class="text-gray-600">Regular servicing and emergency repairs keep your machines running smoothly, minimizing downtime.</p>
+        </div>
+        <!-- Service: Parts & Supplies -->
+        <div class="bg-white shadow-md rounded-lg p-8" data-aos="fade-up" data-aos-delay="100">
+          <div class="text-blue-600 text-3xl mb-4"><i class="fas fa-shopping-bag"></i></div>
+          <h3 class="text-xl font-semibold mb-2">Parts &amp; Supplies</h3>
+          <p class="text-gray-600">Order genuine parts and supplies quickly from our online catalog for dependable performance.</p>
+        </div>
+        <!-- Service: Marketing -->
+        <div class="bg-white shadow-md rounded-lg p-8" data-aos="fade-up" data-aos-delay="200">
+          <div class="text-blue-600 text-3xl mb-4"><i class="fas fa-bullhorn"></i></div>
+          <h3 class="text-xl font-semibold mb-2">Marketing &amp; Creative Services</h3>
+          <p class="text-gray-600">Elevate your brand with marketing support, signage, and custom website designs to attract and retain customers.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About section -->
+  <section id="about" class="py-16">
+    <div class="max-w-6xl mx-auto px-4 flex flex-col md:flex-row items-center gap-8">
+      <!-- Text column -->
+      <div class="md:w-1/2" data-aos="fade-right">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4">Our Story</h2>
+        <p class="text-gray-700 mb-4">Davis Commercial Laundry Solutions has been serving Georgia and the Southeast for over 30 years. Founded by Mr. Davis, a lifelong entrepreneur and proud resident of Port Wentworth, we’re committed to helping laundromat owners succeed. Our experience spans equipment sales, installation, financing, and marketing – all tailored to the unique needs of each client.</p>
+        <p class="text-gray-700">As a family‑owned business, we value integrity, craftsmanship, and personalized service. When you work with us, you get more than machines – you gain a partner invested in your success.</p>
+      </div>
+      <!-- Image column -->
+      <div class="md:w-1/2 flex justify-center" data-aos="fade-left">
+        <img src="https://source.unsplash.com/800x600/?laundry,business,owner" alt="Founder portrait or business image" class="rounded-lg shadow-md w-full h-auto">
+      </div>
+    </div>
+  </section>
+
+  <!-- Resources section -->
+  <section id="resources" class="py-16 bg-gray-100">
+    <div class="max-w-7xl mx-auto px-4">
+      <h2 class="text-3xl md:text-4xl font-bold text-center mb-10">Resource Library</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <!-- Resource: Blog -->
+        <div class="bg-white shadow-md rounded-lg overflow-hidden" data-aos="fade-up">
+          <img src="https://source.unsplash.com/600x400/?laundry,blog" alt="Blog post" class="w-full h-48 object-cover">
+          <div class="p-6">
+            <h3 class="text-lg font-semibold mb-2">Blog</h3>
+            <p class="text-gray-600 mb-4">Read the latest tips and insights on running a profitable laundromat business.</p>
+            <a href="#" class="text-blue-600 hover:underline">Visit Blog &amp;rarr;</a>
+          </div>
+        </div>
+        <!-- Resource: E‑books & Guides -->
+        <div class="bg-white shadow-md rounded-lg overflow-hidden" data-aos="fade-up" data-aos-delay="100">
+          <img src="https://source.unsplash.com/600x400/?laundry,ebook" alt="E‑book" class="w-full h-48 object-cover">
+          <div class="p-6">
+            <h3 class="text-lg font-semibold mb-2">E‑books &amp; Guides</h3>
+            <p class="text-gray-600 mb-4">Download free guides and e‑books on laundromat investment, equipment selection, and maintenance.</p>
+            <a href="#" class="text-blue-600 hover:underline">Download Now &amp;rarr;</a>
+          </div>
+        </div>
+        <!-- Resource: Videos & Tutorials -->
+        <div class="bg-white shadow-md rounded-lg overflow-hidden" data-aos="fade-up" data-aos-delay="200">
+          <div class="p-6">
+            <h3 class="text-lg font-semibold mb-2">Videos &amp; Tutorials</h3>
+            <p class="text-gray-600 mb-4">Watch product demos and customer success stories from our partners and clients.  Below is a featured video hosted on our Vimeo account.</p>
+            <!-- Vimeo video embed: replace the video URL with one from your Vimeo account if desired -->
+            <div class="relative pb-[56.25%] h-0 overflow-hidden rounded-lg">
+              <iframe src="https://player.vimeo.com/video/76979871" class="absolute top-0 left-0 w-full h-full" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact section -->
+  <section id="contact" class="py-16">
+    <div class="max-w-4xl mx-auto px-4">
+      <h2 class="text-3xl md:text-4xl font-bold text-center mb-8">Get in Touch</h2>
+      <p class="text-center text-gray-600 mb-8">We’d love to discuss your laundry project. Fill out the form below or reach us at <a href="mailto:info@daviscls.com" class="text-blue-600">info@daviscls.com</a>.</p>
+      <!-- Replace the static contact form with a HubSpot form embed -->
+      <div class="bg-white shadow-md rounded-lg p-8 space-y-4">
+        <!-- HubSpot contact form: automatically renders within this container -->
+        <script src="https://js-na2.hsforms.net/forms/embed/245026924.js" defer></script>
+        <div class="hs-form-frame" data-region="na2" data-form-id="e4485353-2132-4be8-b7b0-63f5b8303ad3" data-portal-id="245026924"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Enhanced footer with multi‑column links modeled after the premium Laundrylux layout -->
+  <footer class="bg-gray-900 text-gray-200">
+    <!-- Multi‑column link section -->
+    <div class="max-w-7xl mx-auto px-4 py-12 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8">
+      <!-- Who We Serve -->
+      <div>
+        <h4 class="text-lg font-semibold mb-3">Who We Serve</h4>
+        <ul class="space-y-2">
+          <li><a href="#services" class="text-gray-400 hover:text-white">Laundromat Owners</a></li>
+          <li><a href="#services" class="text-gray-400 hover:text-white">Business Investors</a></li>
+          <li><a href="#services" class="text-gray-400 hover:text-white">On‑Premises Laundry</a></li>
+          <li><a href="#services" class="text-gray-400 hover:text-white">Multi‑Housing</a></li>
+          <li><a href="#services" class="text-gray-400 hover:text-white">Route Operators</a></li>
+        </ul>
+      </div>
+      <!-- Laundry Equipment -->
+      <div>
+        <h4 class="text-lg font-semibold mb-3">Laundry Equipment</h4>
+        <ul class="space-y-2">
+          <li class="font-medium text-gray-300">Types of Equipment</li>
+          <li><a href="#services" class="text-gray-400 hover:text-white">Professional</a></li>
+          <li><a href="#services" class="text-gray-400 hover:text-white">Semi‑Professional</a></li>
+          <li class="mt-4 font-medium text-gray-300">Brands</li>
+          <li><a href="#services" class="text-gray-400 hover:text-white">Electrolux Professional</a></li>
+          <li><a href="#services" class="text-gray-400 hover:text-white">Wascomat</a></li>
+          <li><a href="#services" class="text-gray-400 hover:text-white">Encore Pro</a></li>
+        </ul>
+      </div>
+      <!-- Services -->
+      <div>
+        <h4 class="text-lg font-semibold mb-3">Services</h4>
+        <ul class="space-y-2">
+          <li><a href="#services" class="text-gray-400 hover:text-white">Financing</a></li>
+          <li><a href="#services" class="text-gray-400 hover:text-white">Real Estate</a></li>
+          <li><a href="#services" class="text-gray-400 hover:text-white">Laundry Management</a></li>
+          <li><a href="#services" class="text-gray-400 hover:text-white">Marketing</a></li>
+          <li><a href="#services" class="text-gray-400 hover:text-white">Repair &amp; Maintenance</a></li>
+          <li><a href="#services" class="text-gray-400 hover:text-white">Replacement Parts</a></li>
+          <li><a href="#services" class="text-gray-400 hover:text-white">Lookup Parts</a></li>
+        </ul>
+      </div>
+      <!-- Business Resources -->
+      <div>
+        <h4 class="text-lg font-semibold mb-3">Business Resources</h4>
+        <ul class="space-y-2">
+          <li><a href="#resources" class="text-gray-400 hover:text-white">Blog</a></li>
+          <li><a href="#resources" class="text-gray-400 hover:text-white">Brochures &amp; Spec Sheets</a></li>
+          <li><a href="#resources" class="text-gray-400 hover:text-white">Videos Tutorials</a></li>
+          <li><a href="#resources" class="text-gray-400 hover:text-white">eBooks, Case Studies</a></li>
+          <li><a href="#resources" class="text-gray-400 hover:text-white">Guides &amp; More</a></li>
+        </ul>
+      </div>
+      <!-- About Us / Quick Links combined -->
+      <div>
+        <h4 class="text-lg font-semibold mb-3">About Us</h4>
+        <ul class="space-y-2 mb-4">
+          <li><a href="#about" class="text-gray-400 hover:text-white">Company History</a></li>
+          <li><a href="#about" class="text-gray-400 hover:text-white">Leadership</a></li>
+          <li><a href="#about" class="text-gray-400 hover:text-white">Careers</a></li>
+        </ul>
+        <h4 class="text-lg font-semibold mb-3">Quick Links</h4>
+        <ul class="space-y-2">
+          <li><a href="#" class="text-gray-400 hover:text-white">Opening a Laundromat</a></li>
+          <li><a href="#" class="text-gray-400 hover:text-white">Commercial Laundry</a></li>
+          <li><a href="#services" class="text-gray-400 hover:text-white">Equipment</a></li>
+          <li><a href="#services" class="text-gray-400 hover:text-white">Laundry Systems</a></li>
+          <li><a href="#services" class="text-gray-400 hover:text-white">Laundromat Supplier</a></li>
+          <li><a href="#services" class="text-gray-400 hover:text-white">Laundry Business</a></li>
+        </ul>
+      </div>
+    </div>
+    <!-- Bottom row with copyright and social icons -->
+    <div class="border-t border-gray-700 py-6">
+      <div class="max-w-7xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center">
+        <div class="mb-4 md:mb-0">
+          <span class="font-bold text-lg">Davis CLS</span>
+          <span class="text-gray-400">© <script>document.write(new Date().getFullYear())</script></span>
+        </div>
+        <div class="space-x-4 text-xl">
+          <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-instagram"></i></a>
+          <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Swiper JS for slider functionality -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+  <!-- AOS JS for scroll animations -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    // Mobile menu toggle
+    document.getElementById('mobile-menu-button').addEventListener('click', function() {
+      const menu = document.getElementById('mobile-menu');
+      menu.classList.toggle('hidden');
+    });
+    // Initialize Swiper
+    const swiper = new Swiper('.heroSwiper', {
+      loop: true,
+      autoplay: {
+        delay: 5000,
+      },
+      effect: 'fade',
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+    });
+    // Initialize AOS (Animate On Scroll)
+    AOS.init({
+      duration: 800,
+      once: true,
+    });
+  </script>
+</body>
+</html>
