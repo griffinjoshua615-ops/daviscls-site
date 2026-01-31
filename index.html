@@ -4,6 +4,9 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- SEO meta tags for improved search visibility -->
+  <meta name="description" content="Davis Commercial Laundry Solutions delivers premium laundromat services including equipment sales, financing, design &amp; build, maintenance, marketing and more. Serving Georgia and the Southeast for over 30 years.">
+  <meta name="keywords" content="laundromat, commercial laundry, equipment sales, financing, design build, maintenance, Georgia, Davis CLS">
   <title>Davis Commercial Laundry Solutions | Premium Laundromat Services</title>
   <!-- Swiper CSS for the hero slider -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css">
@@ -17,6 +20,15 @@
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
   <!-- Tailwind CSS via CDN for rapid styling -->
   <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Google Analytics placeholder: replace YOUR_GA_MEASUREMENT_ID with your actual ID to enable analytics tracking -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=YOUR_GA_MEASUREMENT_ID"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'YOUR_GA_MEASUREMENT_ID');
+  </script>
   <style>
     body {
       font-family: 'Open Sans', sans-serif;
@@ -133,11 +145,11 @@
                 <div class="menu-column">
                   <h4>Who We Serve</h4>
                   <ul>
-                    <li><a href="#services">Laundromat Owners</a></li>
-                    <li><a href="#services">Business Investors</a></li>
-                    <li><a href="#services">On‑Premises Laundry</a></li>
-                    <li><a href="#services">Multi‑Housing</a></li>
-                    <li><a href="#services">Route Operators</a></li>
+                    <li><a href="owners.html">Laundromat Owners</a></li>
+                    <li><a href="investors.html">Business Investors</a></li>
+                    <li><a href="opl.html">On‑Premises Laundry</a></li>
+                    <li><a href="multi-housing.html">Multi‑Housing</a></li>
+                    <li><a href="#contact">Route Operators</a></li>
                   </ul>
                 </div>
                 <div class="menu-column">
@@ -173,7 +185,7 @@
                     <li><a href="#resources">Blog</a></li>
                     <li><a href="#resources">E‑books &amp; Guides</a></li>
                     <li><a href="#resources">Video Tutorials</a></li>
-                    <li><a href="#resources">Case Studies</a></li>
+                    <li><a href="case-studies.html">Case Studies</a></li>
                     <li><a href="#resources">Spec Sheets</a></li>
                   </ul>
                 </div>
@@ -375,7 +387,8 @@
           <div class="p-6">
             <h3 class="text-lg font-semibold mb-2">E‑books &amp; Guides</h3>
             <p class="text-gray-600 mb-4">Download free guides and e‑books on laundromat investment, equipment selection, and maintenance.</p>
-            <a href="#" class="text-blue-600 hover:underline">Download Now &amp;rarr;</a>
+            <!-- Link to the downloadable guide PDF created in the assets folder -->
+            <a href="assets/laundromat-guide.pdf" class="text-blue-600 hover:underline" download>Download Now &amp;rarr;</a>
           </div>
         </div>
         <!-- Resource: Videos & Tutorials -->
@@ -415,11 +428,11 @@
       <div>
         <h4 class="text-lg font-semibold mb-3">Who We Serve</h4>
         <ul class="space-y-2">
-          <li><a href="#services" class="text-gray-400 hover:text-white">Laundromat Owners</a></li>
-          <li><a href="#services" class="text-gray-400 hover:text-white">Business Investors</a></li>
-          <li><a href="#services" class="text-gray-400 hover:text-white">On‑Premises Laundry</a></li>
-          <li><a href="#services" class="text-gray-400 hover:text-white">Multi‑Housing</a></li>
-          <li><a href="#services" class="text-gray-400 hover:text-white">Route Operators</a></li>
+          <li><a href="owners.html" class="text-gray-400 hover:text-white">Laundromat Owners</a></li>
+          <li><a href="investors.html" class="text-gray-400 hover:text-white">Business Investors</a></li>
+          <li><a href="opl.html" class="text-gray-400 hover:text-white">On‑Premises Laundry</a></li>
+          <li><a href="multi-housing.html" class="text-gray-400 hover:text-white">Multi‑Housing</a></li>
+          <li><a href="index.html#contact" class="text-gray-400 hover:text-white">Route Operators</a></li>
         </ul>
       </div>
       <!-- Laundry Equipment -->
